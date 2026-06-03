@@ -1,0 +1,297 @@
+{
+  "version": 1,
+  "author": "Guilherme Vidichosqui Men / ClimaX Edge",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-breadboard",
+      "id": "bb1",
+      "top": -70.2,
+      "left": 2.8,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-arduino-mega",
+      "id": "mega",
+      "top": 29.4,
+      "left": -13.2,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -201.3,
+      "left": 167.4,
+      "attrs": {
+        "temperature": "29.8",
+        "humidity": "70.5"
+      }
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": -131.2,
+      "left": -8.8,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-rgb-led",
+      "id": "rgb1",
+      "top": -188,
+      "left": 385.1,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-ds18b20",
+      "id": "temp1",
+      "top": -58.73,
+      "left": 157.68,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-ntc-temperature-sensor",
+      "id": "ntc1",
+      "top": -227.8,
+      "left": -29.4,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "potVeg",
+      "top": -235,
+      "left": 270,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "potFire",
+      "top": -235,
+      "left": 480,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "buzz1",
+      "top": -105,
+      "left": 465,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -155,
+      "left": 350,
+      "rotate": 90,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": -135,
+      "left": 375,
+      "rotate": 90,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": -115,
+      "left": 400,
+      "rotate": 90,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rDS",
+      "top": -25,
+      "left": 260,
+      "rotate": 90,
+      "attrs": {
+        "value": "4700"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "dht1:VCC",
+      "mega:5V",
+      "red",
+      []
+    ],
+    [
+      "dht1:GND",
+      "mega:GND.1",
+      "black",
+      []
+    ],
+    [
+      "dht1:SDA",
+      "mega:2",
+      "green",
+      []
+    ],
+    [
+      "ldr1:VCC",
+      "mega:5V",
+      "red",
+      []
+    ],
+    [
+      "ldr1:GND",
+      "mega:GND.1",
+      "black",
+      []
+    ],
+    [
+      "ldr1:AO",
+      "mega:A0",
+      "green",
+      []
+    ],
+    [
+      "ntc1:VCC",
+      "mega:5V",
+      "red",
+      []
+    ],
+    [
+      "ntc1:GND",
+      "mega:GND.1",
+      "black",
+      []
+    ],
+    [
+      "ntc1:OUT",
+      "mega:A1",
+      "green",
+      []
+    ],
+    [
+      "temp1:VCC",
+      "mega:5V",
+      "red",
+      []
+    ],
+    [
+      "temp1:GND",
+      "mega:GND.1",
+      "black",
+      []
+    ],
+    [
+      "temp1:DQ",
+      "mega:4",
+      "green",
+      []
+    ],
+    [
+      "rDS:1",
+      "temp1:VCC",
+      "red",
+      []
+    ],
+    [
+      "rDS:2",
+      "temp1:DQ",
+      "green",
+      []
+    ],
+    [
+      "potVeg:VCC",
+      "mega:5V",
+      "red",
+      []
+    ],
+    [
+      "potVeg:GND",
+      "mega:GND.1",
+      "black",
+      []
+    ],
+    [
+      "potVeg:SIG",
+      "mega:A2",
+      "green",
+      []
+    ],
+    [
+      "potFire:VCC",
+      "mega:5V",
+      "red",
+      []
+    ],
+    [
+      "potFire:GND",
+      "mega:GND.1",
+      "black",
+      []
+    ],
+    [
+      "potFire:SIG",
+      "mega:A3",
+      "green",
+      []
+    ],
+    [
+      "mega:9",
+      "r1:1",
+      "red",
+      []
+    ],
+    [
+      "r1:2",
+      "rgb1:R",
+      "red",
+      []
+    ],
+    [
+      "mega:10",
+      "r2:1",
+      "green",
+      []
+    ],
+    [
+      "r2:2",
+      "rgb1:G",
+      "green",
+      []
+    ],
+    [
+      "mega:11",
+      "r3:1",
+      "blue",
+      []
+    ],
+    [
+      "r3:2",
+      "rgb1:B",
+      "blue",
+      []
+    ],
+    [
+      "rgb1:COM",
+      "mega:GND.1",
+      "black",
+      []
+    ],
+    [
+      "buzz1:1",
+      "mega:8",
+      "purple",
+      []
+    ],
+    [
+      "buzz1:2",
+      "mega:GND.1",
+      "black",
+      []
+    ]
+  ],
+  "dependencies": {}
+}
